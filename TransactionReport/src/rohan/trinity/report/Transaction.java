@@ -24,7 +24,7 @@ public class Transaction {
 	private double pricePerUnit;
 	private double amount;
 
-	//To check the weekends Sat/Sun for currency apart from AED/SAR &
+	//To check the weekends Sat/Sun if currency is not AED/SAR &
 	// Fri/Sat for currency AED/SAR
 	static SimpleDateFormat sdf= new SimpleDateFormat("dd MMM yyyy");
 	static SimpleDateFormat day= new SimpleDateFormat("E");
@@ -46,8 +46,8 @@ public class Transaction {
 	/**
 	 * This method checks if the settlement date
 	 * is not a weekend based on currency code.
-	 * @param date
-	 * @return
+	 * @param String
+	 * @return String
 	 */
 	public String checkSettlementDate(String date){
 		try {
@@ -78,7 +78,7 @@ public class Transaction {
 	/**
 	 * This method retrieves a financial entity
 	 * whose shares are to be bought or sold.
-	 * @return entity
+	 * @return String
 	 */
 	public String getEntity() {
 		return entity;
@@ -87,7 +87,7 @@ public class Transaction {
 	/**
 	 * This method retrieves An instruction to
 	 * buy or sell.
-	 * @return instruction
+	 * @return char
 	 */
 	public char getInstruction() {
 		return instruction;
@@ -96,7 +96,7 @@ public class Transaction {
 	/**
 	 * This method retrieves the foreign exchange
 	 * rate with respect to USD that was agreed.
-	 * @return agreedFx
+	 * @return double
 	 */
 	public double getAgreedFx() {
 		return agreedFx;
@@ -104,7 +104,7 @@ public class Transaction {
 
 	/**
 	 * This method retrieves the currency code.
-	 * @return currency
+	 * @return String
 	 */
 	public String getCurrency() {
 		return currency;
@@ -114,7 +114,7 @@ public class Transaction {
 	 * This method retrieves date on which the 
 	 * instruction was sent to JP Morgan by various 
 	 * clients.
-	 * @return instructionDate
+	 * @return String
 	 */
 	public String getInstructionDate() {
 		return instructionDate;
@@ -124,7 +124,7 @@ public class Transaction {
 	 * This method retrieves the date on which the
 	 * client wished for the instruction to be settled
 	 * with respect to instruction date.
-	 * @return settlementDate 
+	 * @return String 
 	 */
 	public String getSettlementDate() {
 		return settlementDate;
@@ -133,7 +133,7 @@ public class Transaction {
 	/**
 	 * This method retrieves number of shares
 	 * to be bought or sold
-	 * @return units
+	 * @return int
 	 */
 	public int getUnits() {
 		return units;
@@ -142,7 +142,7 @@ public class Transaction {
 	/**
 	 * This method retrieves price Per Unit for
 	 * shares.
-	 * @return pricePerUnit
+	 * @return double
 	 */
 	public double getPricePerUnit() {
 		return pricePerUnit;
@@ -150,7 +150,7 @@ public class Transaction {
 
 	/**
 	 * This method retrieves amount of a trade.
-	 * @return amount
+	 * @return double
 	 */
 	public double getAmount() {
 		return amount;

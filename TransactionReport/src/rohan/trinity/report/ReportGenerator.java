@@ -4,11 +4,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
+/**
+ * This is the main class
+ * which is required to generate the final 
+ * report as per requirements.
+ * @author Rohan
+ *
+ */
 public class ReportGenerator {
-	static double sumIncoming=0;
-	static double sumOutgoing=0;
-	static int rankOutgoing=0;
-	static int rankIncoming=0;
+	public static double sumIncoming=0;
+	public static double sumOutgoing=0;
+	public static int rankOutgoing=0;
+	public static int rankIncoming=0;
 	
 	//To get today's date.
 	static SimpleDateFormat sdf= new SimpleDateFormat("dd MMM yyyy");
@@ -16,7 +23,7 @@ public class ReportGenerator {
 	/**
 	 * This method retrieves the outgoing amount for 
 	 * transactions having today's settlement day.
-	 * @return sumOutgoing
+	 * @return double
 	 */
 	public static double settledOutgoingAmount(){
 		for(Transaction t:EntityGenerator.getTransactionList()){
@@ -30,7 +37,7 @@ public class ReportGenerator {
 	/**
 	 * This method retrieves the incoming amount for
 	 * transactions having today's settlement day.
-	 * @return sumIncoming
+	 * @return double
 	 */
 	public static double settledIncomingAmount(){
 		for(Transaction t:EntityGenerator.getTransactionList()){

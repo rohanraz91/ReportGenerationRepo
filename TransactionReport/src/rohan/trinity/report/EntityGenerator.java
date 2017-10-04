@@ -7,6 +7,12 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * To generate sample data 
+ * as per business logic.
+ * @author Rohan
+ *
+ */
 public class EntityGenerator {
 
 	private static ArrayList<Transaction> transactionList= new ArrayList<>();
@@ -60,8 +66,8 @@ public class EntityGenerator {
 	 * This method is used to sort the HashMap 
 	 * by values to get a unique pair of Entity and Amount 
 	 * in descending order.
-	 * @param map
-	 * @return
+	 * @param Map
+	 * @return Map
 	 */
 	public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
 		return map.entrySet()
@@ -77,7 +83,7 @@ public class EntityGenerator {
 
 	/**
 	 * This method retrieves the list which contains sample transactions.
-	 * @return transactionList
+	 * @return ArrayList
 	 */
 	public static ArrayList<Transaction> getTransactionList() {
 		return transactionList;
@@ -85,7 +91,7 @@ public class EntityGenerator {
 
 	/**
 	 * This method retrieves the Map which contains incoming transactions.
-	 * @return hashMapIncoming
+	 * @return HashMap
 	 */
 	public static HashMap<String, Double> getHashMapIncoming() {
 		return hashMapIncoming;
@@ -93,7 +99,7 @@ public class EntityGenerator {
 
 	/**
 	 * This method retrieves the Map which contains outgoing transactions.
-	 * @return hashMapOutgoing
+	 * @return HashMap
 	 */
 	public static HashMap<String, Double> getHashMapOutgoing() {
 		return hashMapOutgoing;

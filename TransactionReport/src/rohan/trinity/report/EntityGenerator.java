@@ -23,10 +23,15 @@ public class EntityGenerator {
 	 * To generate sample transaction for given clients/entities.
 	 */
 	public static void generateEntity(){
-		Transaction t1=new Transaction("foo", 'B', 0.50, "SGP", "01 Jan 2016", "02 Jan 2016", 200, 100.25);
+		//Can be directly included in the list if required.
+		//Constraints(conditions) can be included when the input is dynamic for eg.
+		//instruction should be 'B' or 'S', specific date format etc. 
+		//If constraints are not met we could throw an exception or compel the user
+		//to provide right inputs.
+		Transaction t1=new Transaction("foo", 'B', 0.50, "SGP", "01 Jan 2016", "07 Oct 2017", 200, 100.25);
 		Transaction t2=new Transaction("foo2", 'B', 0.50, "SGP", "01 Jan 2016", "04 Oct 2017", 200, 105.25);
 		Transaction t3=new Transaction("bar", 'S', 0.22, "AED", "05 Jan 2016", "07 Jan 2016", 200, 100.25);
-		Transaction t4=new Transaction("bar2", 'S', 0.22, "AED", "05 Jan 2016", "04 Oct 2017", 200, 110.25);
+		Transaction t4=new Transaction("bar2", 'S', 0.22, "AED", "05 Jan 2016", "06 Oct 2017", 200, 110.25);
 		Transaction t5=new Transaction("bar", 'S', 0.22, "AED", "05 Jan 2016", "07 Jan 2016", 200, 110.25);
 
 		transactionList.add(t1);
@@ -36,7 +41,7 @@ public class EntityGenerator {
 		transactionList.add(t5);
 
 		//Two different HashMaps are taken to reduce the time complexity when the number
-		//of transactions are of greater amount. The idea is to separate the incoming and outgoing
+		//of transactions are in thousands. The idea is to separate the incoming and outgoing
 		//transactions based on instruction-> 'B/S' which plays a major role, if the data was taken
 		//from a file/database/UI.
 		for(Transaction t: transactionList){

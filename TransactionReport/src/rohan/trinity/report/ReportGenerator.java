@@ -47,7 +47,8 @@ public class ReportGenerator {
 		}
 		return sumIncoming;
 	}
-
+	
+	
 	//Should be used to only generate logic.
 	public static void main(String[] args) {
 		//First generate sample data.
@@ -55,14 +56,17 @@ public class ReportGenerator {
 		
 		System.out.println("Outgoing amount settled today is: $"+settledOutgoingAmount());
 		System.out.println("Incoming amount settled today is: $"+settledIncomingAmount());
-		
-		System.out.println("----------RANKS OF ENTITIES FOR OUTGOING AMOUNT--------------");
+		System.out.println("----------ENTITIES FOR OUTGOING AMOUNT--------------");
+		System.out.println("RANK |  ENTITY  |  OUTGOING AMOUNT  ");
 		for(Map.Entry<String, Double> entry: EntityGenerator.getHashMapOutgoing().entrySet()){
-			System.out.println("Rank of entity "+entry.getKey()+" is "+(++rankOutgoing)+" with outgoing amount: $"+entry.getValue());
+			System.out.format("%02d%4s%8s%3s%15.3f", ++rankOutgoing,"|",entry.getKey(),"|", entry.getValue());
+			System.out.println();
 		}
-		System.out.println("----------RANKS OF ENTITIES FOR INCOMING AMOUNT--------------");
+		System.out.println("----------ENTITIES FOR INCOMING AMOUNT--------------");
+		System.out.println("RANK |  ENTITY  |  OUTGOING AMOUNT  ");
 		for(Map.Entry<String, Double> entry: EntityGenerator.getHashMapIncoming().entrySet()){
-			System.out.println("Rank of entity "+entry.getKey()+" is "+(++rankIncoming)+" with incoming amount: $"+entry.getValue());
+			System.out.format("%02d%4s%8s%3s%15.3f", ++rankIncoming,"|",entry.getKey(),"|", entry.getValue());
+			System.out.println();
 		}
 		System.out.println("-------------------------------------------------------------");
 

@@ -109,7 +109,4 @@ public class EntityGenerator {
 	public static HashMap<String, Double> getHashMapOutgoing() {
 		return hashMapOutgoing;
 	}
-
-
-
 }

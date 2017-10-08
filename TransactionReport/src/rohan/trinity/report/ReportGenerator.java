@@ -48,8 +48,7 @@ public class ReportGenerator {
 		return sumIncoming;
 	}
 	
-	
-	//Should be used to only generate logic.
+	//Should be used to only generate logic and not to write any logic.
 	public static void main(String[] args) {
 		//First generate sample data.
 		EntityGenerator.generateEntity();
